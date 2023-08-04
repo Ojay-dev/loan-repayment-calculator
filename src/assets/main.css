@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Druk Wide Bold';
+    src: url('./fonts/Druk-Wide-Bold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Product Sans';
+    src: url('./fonts/Product-Sans-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Clash Display';
+    src: url('./fonts/ClashDisplay-Medium.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'Integral CF';
+    src: url('./fonts/IntegralCF-Regular.otf') format('opentype');
+  }
+
+  html {
+    @apply font-product-sans;
+  }
+
+  .input {
+    @apply w-full  border-2 border-gray-300 px-4 py-2 font-product-sans focus:border-blue-500 focus:outline-none;
+  }
+
+  .number {
+    @apply flex h-10 w-10 items-center justify-center rounded-full  bg-gray-100 font-product-sans focus:border-blue-500 focus:outline-none;
+  }
+
+  .notification {
+    @apply bg-[#E9FFF6] px-6 py-5;
+  }
+
+  .title {
+    @apply mb-6 text-4xl;
+  }
+
+  .subtitle {
+    @apply text-xl;
+  }
+}
