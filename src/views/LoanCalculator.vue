@@ -53,11 +53,10 @@
         :monthlyPayment="monthlyPayment"
         :totalInterest="totalInterest"
         :totalPayment="totalPayment"
+        class="notification-component"
       />
     </div>
   </section>
-
-  <button @click="() => toast.error('My first toast')">Render a toast</button>
 </template>
 
 <script setup>
@@ -78,6 +77,11 @@ const totalPayment = ref(0);
 
 // Loan calculation function
 const computeResults = () => {
+  if (loanData.amount === 0 || loanData.interest === 0 || loanData.years === 0) {
+    toast.error('Please fill all fields');
+    return;
+  }
+
   const principal = parseFloat(loanData.amount);
   const calculateInterest = parseFloat(loanData.interest) / 100 / 12;
   const calculatedPayments = parseFloat(loanData.years) * 12;
